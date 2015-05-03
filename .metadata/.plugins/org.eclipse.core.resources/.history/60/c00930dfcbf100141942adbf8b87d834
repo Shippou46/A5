@@ -1,0 +1,50 @@
+package Assign3;
+
+public class Session {
+
+	private User user;
+	public static int uAll = 0;
+	public static int uIMgr = 1;
+	public static int uPMgr = 2;
+	public static int uAdmin = 3;
+
+	public boolean canViewProductTemplates;
+	public boolean canAddProductTemplates;
+	public boolean canDeleteProductTemplates;
+	public boolean canCreateProducts;
+	public boolean canDeleteProducts;
+	public boolean canViewInv;
+	public boolean canAddInv;
+	public boolean canDeleteInv;
+	public boolean canViewParts;
+	public boolean canAddParts;
+	public boolean canDeleteParts;
+
+	public Session(int role) {
+		canViewInv = true;
+		canViewParts = true;
+		
+		if(role ==1){
+			canAddInv = true;
+			canAddParts = true;
+		}
+		
+	    if(role == 2){
+	    	canViewProductTemplates = true;
+			canAddProductTemplates = true;
+			canDeleteProductTemplates = true;
+			canCreateProducts = true;
+			}
+	    if(role == 3){
+	    	canViewProductTemplates = true;
+			canAddProductTemplates = true;
+			canDeleteProductTemplates = true;
+			canCreateProducts = true;
+			canAddInv = true;
+			canAddParts = true;
+			canDeleteParts = true;
+			canDeleteInv = true;
+	    }
+	}
+
+}
