@@ -353,7 +353,7 @@ public class MyDB {
 	}
 
 	public void register(User user, String pw) {
-		String message = "INSERT into Login ( usr, pwd, email, permissions) values (\""
+		String message = "INSERT into Login (usr, pw, email, permissions) values (\""
 				+ user.getUser()
 				+ "\",\""
 				+ pw

@@ -2,7 +2,6 @@ package Assign3;
 
 public class Session {
 
-	private User user;
 	public static int uAll = 0;
 	public static int uIMgr = 1;
 	public static int uPMgr = 2;

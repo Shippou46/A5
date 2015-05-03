@@ -101,6 +101,11 @@ public class InventoryController {
 		return null;
 	}
 
+	public void setSession(Session s) {
+		// TODO Auto-generated method stub
+		
+	}
+
 
 
 }

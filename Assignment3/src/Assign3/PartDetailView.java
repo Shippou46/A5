@@ -59,6 +59,7 @@ public class PartDetailView extends JFrame {
 
 		this.add(panel, BorderLayout.CENTER);
 
+
 		if (p != null) {
 			Num.setText(part.getPartNumber());
 			Name.setText(part.getPartName());
@@ -72,6 +73,5 @@ public class PartDetailView extends JFrame {
 		} else
 			this.setTitle(part.getPartName());
 	}
-
 }
 

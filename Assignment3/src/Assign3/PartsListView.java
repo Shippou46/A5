@@ -22,9 +22,9 @@ public class PartsListView extends JFrame implements InventoryObserver {
 	private static final long serialVersionUID = 1L;
 	private JList<String> list;
 	private DefaultListModel<String> listModel;
-	
+
 	private InventoryController invC;
-	
+
 	public PartsListView(InventoryController invC, Inventory inv) {
 		//buttons on top (north)
 		//list view center
@@ -33,8 +33,35 @@ public class PartsListView extends JFrame implements InventoryObserver {
 		this.setLayout(new BorderLayout());
 		
 		JPanel buttonPanel = new JPanel();
-		buttonPanel.setLayout(new GridLayout(5, 5));
-		JButton button = new JButton("Add Part");
+		buttonPanel.setLayout(new GridLayout(7, 7));
+		
+		JButton button = new JButton("Login");
+		button.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				LoginView v = new LoginView(invC);
+				v.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+				v.setSize(400,200);
+				v.setLocation(500, 100);
+				v.setVisible(true);
+			}
+		});
+		buttonPanel.add(button);
+		
+		
+		button = new JButton("Register");
+		button.addActionListener(new ActionListener(){
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				RegisterView v = new RegisterView(invC);
+				v.setDefaultCloseOperation(DISPOSE_ON_CLOSE);
+				v.setSize(400,200);
+				v.setLocation(500, 100);
+				v.setVisible(true);
+			}
+		});
+		buttonPanel.add(button);	
+	button = new JButton("Add Part");
 		button.addActionListener(new ActionListener() {
 			@Override
 			public void actionPerformed(ActionEvent e) {
@@ -89,7 +116,7 @@ public class PartsListView extends JFrame implements InventoryObserver {
 		button.addActionListener(new ActionListener(){
 			@Override
 			public void actionPerformed(ActionEvent e) {
-				Session session = invC.getSession();
+				invC.getSession();
 			   ArrayList<Product> product = null;
 			ProductView pView = new ProductView(invC, product);
 				pView.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -141,10 +168,10 @@ public class PartsListView extends JFrame implements InventoryObserver {
 	@Override
 	public void updateObserver(Inventory inv) {
 		listModel.clear();
-		for(Part p : inv.getParts())
+		for (Part p : inv.getParts())
 			listModel.addElement(p.getPartName());
-		//int i = list.getSelectedIndex();
-		//if(inv.getNumParts() > 0)
-			//list.setSelectedIndex(0);
+		// int i = list.getSelectedIndex();
+		// if(inv.getNumParts() > 0)
+		// list.setSelectedIndex(0);
 	}
 }
