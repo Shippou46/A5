@@ -5,8 +5,6 @@ import java.sql.SQLException;
 
 public class InventoryController {
 	private Inventory inv;
-	private Session session;
-	
 
 	public InventoryController(Inventory i) {
 		inv = i;
@@ -99,11 +97,13 @@ public class InventoryController {
 	}
 
 	public Session getSession() {
-		return session;
+		// TODO Auto-generated method stub
+		return null;
 	}
 
-	public void setSession(Session session) {
-		this.session = session;
+	public void setSession(Session s) {
+		// TODO Auto-generated method stub
+		
 	}
 
 
